@@ -33,7 +33,4 @@ public class KarelDefendsDemocracy extends SuperKarel {
 		turnRight();
 	}
 	
-	private void doSomething() {
-		
-	}
 }
