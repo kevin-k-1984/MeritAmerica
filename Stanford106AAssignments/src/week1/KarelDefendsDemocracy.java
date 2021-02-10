@@ -16,18 +16,23 @@ public class KarelDefendsDemocracy extends SuperKarel {
 		}
 	}
 	
+	/* karel clears the beepers from a single section*/
 	private void clearBeepers() {
 		turnLeft();
 		move();
+		
 		while (beepersPresent()) {
 			pickBeeper();
 		}
+		
 		turnAround();
 		move();
 		move();
+		
 		while (beepersPresent()) {
 			pickBeeper();
 		}
+		
 		turnAround();
 		move();
 		turnRight();
