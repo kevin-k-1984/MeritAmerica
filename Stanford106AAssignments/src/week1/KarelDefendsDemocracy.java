@@ -32,4 +32,8 @@ public class KarelDefendsDemocracy extends SuperKarel {
 		move();
 		turnRight();
 	}
+	
+	private void doSomething() {
+		
+	}
 }
