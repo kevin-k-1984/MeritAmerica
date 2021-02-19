@@ -26,7 +26,7 @@ public class RandomCircles extends GraphicsProgram {
 	}
 
 	private GOval makeCircle() {
-		int cirSize = rgen.nextInt(5, 50);
+		int cirSize = rgen.nextInt(50, 200);
 		GOval circle = new GOval(cirSize, cirSize);
 		circle.setFilled(true);
 		circle.setFillColor(rgen.nextColor());
