@@ -21,10 +21,6 @@ public class DrawingLines extends GraphicsProgram {
 		lineObj = null;
 	}
 	
-	public void mouseMoved(MouseEvent e) {
-//		label.setLabel("Mouse: (" + e.getX() + ", " + e.getY() + ")" );
-	}
-	
 	public void mouseDragged(MouseEvent e) {
 		if (lineObj != null) {
 			lineObj.setEndPoint(e.getX(), e.getY());
