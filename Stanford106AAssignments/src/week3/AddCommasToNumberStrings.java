@@ -1,7 +1,5 @@
 package week3;
 
-import java.util.*;
-
 import acm.program.ConsoleProgram;
 
 public class AddCommasToNumberStrings extends ConsoleProgram {
@@ -13,23 +11,18 @@ public class AddCommasToNumberStrings extends ConsoleProgram {
 			println(addCommasToNumericString(digits));
 		}
 	}
-
-	private String addCommasToNumericString(String digits) {
-		char[] asChars = digits.toCharArray();
-		Stack<Character> st = new Stack<Character>();
-		
-		
-		for (int i = asChars.length - 1; i >= 0; i--) { 
-			st.push(a); 
-		}
-		
-		char[] withCommas = new char[st.size()];
-		
-		for (int i = withCommas.length - 1; i >= 0; i--) {
-			withCommas[i] = st.pop();
-		}
-		
-		return new String(withCommas);
-	}
 	
+	private String addCommasToNumericString(String digits) {
+		String result = "";
+	    
+		for (int i = digits.length() - 1; i >= 0; i--) {
+	        char tempChar = digits.charAt(i);
+	        result = tempChar + result;
+	        if ((digits.length() - i) % 3 == 0 && i > 0) { 
+	        	result = "," + result; 
+	        }
+	    }
+
+	    return result;
+	}
 }
