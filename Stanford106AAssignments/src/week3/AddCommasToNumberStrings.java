@@ -15,14 +15,13 @@ public class AddCommasToNumberStrings extends ConsoleProgram {
 	private String addCommasToNumericString(String digits) {
 		String result = "";
 		int index = digits.length();
+		int totalCommas = digits.length() % 3 == 0 ? (digits.length() / 3) - 1 : digits.length() / 3;
 		
-		if (digits.length() <= 3) return digits;
-		
-		for (int i = digits.length() / 3; i > 0; i--) {
+		for (int i = totalCommas; i > 0; i--) {
 			result = "," +  digits.substring(index - 3, index) + result;
 			index -= 3;
 		}
 		
-		return digits.substring(0, digits.length() % 3) + result;
+		return digits.substring(0, index) + result;
 	}
 }
