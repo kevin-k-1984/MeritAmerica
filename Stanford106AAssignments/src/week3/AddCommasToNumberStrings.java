@@ -13,6 +13,8 @@ public class AddCommasToNumberStrings extends ConsoleProgram {
 	}
 	
 	private String addCommasToNumericString(String digits) {
+		if (digits.length() <= 3) { return digits;}
+		
 		String result = "";
 		int index = digits.length();
 		int totalCommas = digits.length() % 3 == 0 ? (digits.length() / 3) - 1 : digits.length() / 3;
