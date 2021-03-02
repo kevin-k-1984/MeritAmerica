@@ -8,8 +8,7 @@ import acm.util.ErrorException;
 public class WordCount extends ConsoleProgram {
 	
 	public void run() {
-//		println("File Original path = " + f.getPath());
-//		println("File Absolute path = " + f.getAbsolutePath());
+		println("File = lear.txt");
 		println("Lines = " + this.numberOfLines("lear.txt"));
 		println("Words = " + this.numberOfWords("lear.txt"));
 		println("Chars = " + this.numberOfCharacters("lear.txt"));
@@ -49,6 +48,7 @@ public class WordCount extends ConsoleProgram {
 		} catch (IOException e) {
 			throw new ErrorException(e);
 		}
+		
 		return count;
 	}
 	
@@ -67,6 +67,7 @@ public class WordCount extends ConsoleProgram {
 		} catch (IOException e) {
 			throw new ErrorException(e);
 		}
+		
 		return count;
 	}
 }
