@@ -8,10 +8,11 @@ import acm.util.ErrorException;
 public class WordCount extends ConsoleProgram {
 	
 	public void run() {
-		println("File = " + "lear.txt");
+//		println("File Original path = " + f.getPath());
+//		println("File Absolute path = " + f.getAbsolutePath());
 		println("Lines = " + this.numberOfLines("lear.txt"));
-		println("Words = " + this.numberOfWords());
-		println("Chars = " + this.numberOfCharacters());
+		println("Words = " + this.numberOfWords("lear.txt"));
+		println("Chars = " + this.numberOfCharacters("lear.txt"));
 	}
 	
 	public int numberOfLines(String fileName) {
@@ -32,23 +33,40 @@ public class WordCount extends ConsoleProgram {
 		return count;
 	}
 	
-	public int numberOfWords() {
-//		try {
-//			BufferedReader rd = new BufferedReader(new FileReader(""));
-//		} catch (FileNotFoundException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-		return 0;
+	public int numberOfWords(String fileName) {
+		BufferedReader rd = null;
+		int count = 0;
+		
+		try {
+			rd = new BufferedReader(new FileReader(fileName));
+			while (true) {
+				String line = rd.readLine();
+				if (line == null) { break; }
+				String[] delimLine = line.split("[ ,]");
+				count += delimLine.length;
+			}
+			rd.close();
+		} catch (IOException e) {
+			throw new ErrorException(e);
+		}
+		return count;
 	}
 	
-	public int numberOfCharacters() {
-//		try {
-//			BufferedReader rd = new BufferedReader(new FileReader(""));
-//		} catch (FileNotFoundException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-		return 0;
+	public int numberOfCharacters(String fileName) {
+		BufferedReader rd = null;
+		int count = 0;
+		
+		try {
+			rd = new BufferedReader(new FileReader(fileName));
+			while (true) {
+				String line = rd.readLine();
+				if (line == null) { break; }
+				count += line.substring(0, line.length() - 1).length();
+			}
+			rd.close();
+		} catch (IOException e) {
+			throw new ErrorException(e);
+		}
+		return count;
 	}
 }
