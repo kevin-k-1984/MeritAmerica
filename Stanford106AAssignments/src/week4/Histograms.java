@@ -8,12 +8,17 @@ import acm.util.ErrorException;
 public class Histograms extends ConsoleProgram {
 	
 	public void run() {
-		println("00-09: " + this.printStarStrings(this.countTotalInRange("MidtermScores.txt",  0,  9)));
-		println("10-19: " + this.printStarStrings(this.countTotalInRange("MidtermScores.txt",  10,  19)));
-		println("20-29: " + this.printStarStrings(this.countTotalInRange("MidtermScores.txt",  20,  29)));
-		println("30-39: " + this.printStarStrings(this.countTotalInRange("MidtermScores.txt",  30,  39)));
-		println("40-49: " + this.printStarStrings(this.countTotalInRange("MidtermScores.txt",  40,  49)));
-		println("50-59: " + this.printStarStrings(this.countTotalInRange("MidtermScores.txt",  50,  59)));
+		println("00-09: " + this.printStarStrings(this.countTotalInRange("MidtermScores.txt",  0, 9)));
+		println("10-19: " + this.printStarStrings(this.countTotalInRange("MidtermScores.txt", 10, 19)));
+		println("20-29: " + this.printStarStrings(this.countTotalInRange("MidtermScores.txt", 20, 29)));
+		println("30-39: " + this.printStarStrings(this.countTotalInRange("MidtermScores.txt", 30, 39)));
+		println("40-49: " + this.printStarStrings(this.countTotalInRange("MidtermScores.txt", 40, 49)));
+		println("50-59: " + this.printStarStrings(this.countTotalInRange("MidtermScores.txt", 50, 59)));
+		println("60-69: " + this.printStarStrings(this.countTotalInRange("MidtermScores.txt", 60, 69)));
+		println("70-79: " + this.printStarStrings(this.countTotalInRange("MidtermScores.txt", 70, 79)));
+		println("80-89: " + this.printStarStrings(this.countTotalInRange("MidtermScores.txt", 80, 89)));
+		println("90-99: " + this.printStarStrings(this.countTotalInRange("MidtermScores.txt", 90, 99)));
+		println("  100: " + this.printStarStrings(this.countTotalInRange("MidtermScores.txt", 100, 100)));
 	}
 
 	private int countTotalInRange(String fileName, int i, int j) {
@@ -26,8 +31,8 @@ public class Histograms extends ConsoleProgram {
 			while (true) {
 				String line = rd.readLine();
 				if (line == null) { break; }
-				int temp = Integer.valueOf(line.split(" ")[0]);
-				if (temp > i && temp < j) { count++; }
+				int temp = Integer.valueOf(line.split(" ")[0]);				
+				if (temp >= i && temp <= j) { count++; }
 			}
 			rd.close();
 			
