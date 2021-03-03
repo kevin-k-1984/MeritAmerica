@@ -41,6 +41,7 @@ public class ImageProcessing extends GraphicsProgram {
 	}
 	
 	public void keyTyped(KeyEvent e) {
-		add(this.flipHorizontal(this.image));
+		this.image = this.flipHorizontal(this.image);
+		add(this.image);
 	}
 }
