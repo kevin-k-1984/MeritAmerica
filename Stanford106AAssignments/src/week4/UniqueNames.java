@@ -10,7 +10,6 @@ public class UniqueNames extends ConsoleProgram {
 	
 	public void run() {
 		namesList = new ArrayList();
-		namesListItr = namesList.iterator();
 		
 		while (true) {
 			String name = readLine("Enter name: ");
@@ -20,8 +19,8 @@ public class UniqueNames extends ConsoleProgram {
 		
 		println("Unique name list contains:");
 		
-		while (namesListItr.hasNext()) {
-			println(namesListItr.next());
+		for (int i = 0; i < namesList.size(); i++) {
+			println(namesList.get(i));
 		}
 	}
 	
