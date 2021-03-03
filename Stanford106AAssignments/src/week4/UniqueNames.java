@@ -14,11 +14,17 @@ public class UniqueNames extends ConsoleProgram {
 		while (true) {
 			String name = readLine("Enter name: ");
 			if (name.equals("")) break;
-			if (!namesList.contains(name)) namesList.add(name);
+			if (name.equals("print list")) {
+				this.printNames(namesList); 
+			} else if (!namesList.contains(name)) {
+				namesList.add(name);
+			}
 		}
-		
+		this.printNames(namesList);
+	}
+
+	private void printNames(ArrayList namesList) {
 		println("Unique name list contains:");
-		
 		for (int i = 0; i < namesList.size(); i++) {
 			println(namesList.get(i));
 		}
