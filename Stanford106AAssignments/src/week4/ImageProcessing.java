@@ -30,9 +30,9 @@ public class ImageProcessing extends GraphicsProgram {
 		for (int i = 0; i < height; i++) {
 			for (int j = 0; j < width / 2; j++) {
 				int x = width - j - 1;
-				int temp = flippedImage[i][j];
-				flippedImage[i][j] = flippedImage[i][x];
-				flippedImage[i][x] = temp;
+				int temp = flippedImage[i][x];
+				flippedImage[i][x] = flippedImage[i][j];
+				flippedImage[i][j] = temp;
 			}
 		}
 		GImage newImage = new GImage(flippedImage);
