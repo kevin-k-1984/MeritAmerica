@@ -1,7 +1,7 @@
 package week4;
 import stanford.karel.*;
 
-public class KarelMidterm extends SuperKarel {
+public class MidtermKarel extends SuperKarel {
 	
 	public void run() {
 		move();

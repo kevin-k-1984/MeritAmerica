@@ -3,7 +3,7 @@ package week4;
 import acm.program.*;
 import java.util.*;
 
-public class MidtermConsole extends ConsoleProgram {
+public class MidtermLargestIntergers extends ConsoleProgram {
 
 	public void init() {
 		println("This program finds the two largest integers in a ");
