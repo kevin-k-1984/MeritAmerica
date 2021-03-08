@@ -36,29 +36,22 @@ public class MidtermFrogger extends GraphicsProgram {
 		
 		if (Math.abs(mouse_x - pos_x) > Math.abs(mouse_y - pos_y)) {
 			if (mouse_x > pos_x) {
-				moveVirus(SQUARE_SIZE, 0);
+				if (pos_x + SQUARE_SIZE <= APPLICATION_WIDTH) moveVirus(SQUARE_SIZE, 0);
 			} else {
-				moveVirus(-SQUARE_SIZE, 0);
+				if (pos_x - SQUARE_SIZE >= 0) moveVirus(-SQUARE_SIZE, 0);
 			}
 		} else {
 			if (mouse_y > pos_y) {
-				moveVirus(0, SQUARE_SIZE);
+				if (pos_y + SQUARE_SIZE <= APPLICATION_HEIGHT) moveVirus(0, SQUARE_SIZE);
 			} else {
-				moveVirus(0, -SQUARE_SIZE);
+				if (pos_y - SQUARE_SIZE >= 0) moveVirus(0, -SQUARE_SIZE);
 			}
 		}
 	}
 
 	private void moveVirus(double x, double y) {
-		if (onWorld(pos_x + x, pos_y + y)) {
-			pos_x += x;
-			pos_y += y;
-			this.virus.move(x, y);
-		}
-		
-	}
-
-	private boolean onWorld(double x, double y) {
-		return (x >= 0 && x <= NCOLUMNS * SQUARE_SIZE && y >= 0 && y <= NROWS * SQUARE_SIZE);
+		pos_x += x;
+		pos_y += y;
+		this.virus.move(x, y);
 	}
 }
