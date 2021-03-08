@@ -1,4 +1,4 @@
-package week1;
+package week4;
 import stanford.karel.*;
 
 public class KarelMidterm extends SuperKarel {
