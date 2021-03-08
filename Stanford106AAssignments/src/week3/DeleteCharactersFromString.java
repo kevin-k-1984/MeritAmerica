@@ -15,6 +15,8 @@ public class DeleteCharactersFromString extends ConsoleProgram {
 		for (char current: string.toCharArray()) {
 			if (current != c) { result += current;}
 		}
+		
 		return result;
 	}
+	
 }

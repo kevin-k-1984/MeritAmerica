@@ -15,11 +15,10 @@ public class WordCount extends ConsoleProgram {
 	}
 	
 	public int numberOfLines(String fileName) {
-		BufferedReader rd = null;
 		int count = 0;
 		
 		try {
-			rd = new BufferedReader(new FileReader(fileName));
+			BufferedReader rd = new BufferedReader(new FileReader(fileName));
 			while (true) {
 				if (rd.readLine() == null) { break; }
 				count++;
@@ -33,11 +32,10 @@ public class WordCount extends ConsoleProgram {
 	}
 	
 	public int numberOfWords(String fileName) {
-		BufferedReader rd = null;
 		int count = 0;
 		
 		try {
-			rd = new BufferedReader(new FileReader(fileName));
+			BufferedReader rd = new BufferedReader(new FileReader(fileName));
 			while (true) {
 				String line = rd.readLine();
 				if (line == null) { break; }
@@ -53,11 +51,10 @@ public class WordCount extends ConsoleProgram {
 	}
 	
 	public int numberOfCharacters(String fileName) {
-		BufferedReader rd = null;
 		int count = 0;
 		
 		try {
-			rd = new BufferedReader(new FileReader(fileName));
+			BufferedReader rd = new BufferedReader(new FileReader(fileName));
 			while (true) {
 				String line = rd.readLine();
 				if (line == null) { break; }
